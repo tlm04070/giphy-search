@@ -1,18 +1,20 @@
 $(document).ready(function(){
 
 
+//array of countries to start off with
+var countries=["America", "Mexico", "Ireland", "Great Britain", "Canada", "New Zealand", "Japan", "India", "Morocco"]
 
-var countries=["America", "Mexico", "Ireland", "Great Britian", "Canada", "New Zealand", "Japan", "India", "Morocco"]
-
+//dynamically creating buttons for each of the starting countries
 for(i=0; i<countries.length; i++){
  var starting= $('<button>').addClass("country").html(countries[i]).attr("data-name", countries[i]);
   $("#buttons").append(starting);
   
 }
 
-
+//click event to add an input into a button and push it to the array of existing buttons
 $("#search").on("click", function(){
   
+  //setting i to x; setting the last index of the array to a new variable that then creates a button to add to the countries array
   countries.push($("#submit").val());
   for(x=i; x<countries.length; x++){
     var fresh = $("<button>").addClass("country").html($("#submit").val()).attr("data-name", countries[i]);
@@ -25,10 +27,10 @@ $("#search").on("click", function(){
 
 });
 
-
+//adding a click event to the buttons
     $("#buttons").on("click", ".country", function() {
-      $("#gifs-appear-here").empty();
-       // Attaches event listener function
+      $("#gifs-appear-here").empty(); //clearing out whatever is currently populated
+       
       
       var country = $(this).attr("data-name");
       console.log(country); // $(this) refers to the button that was clicked
@@ -73,15 +75,15 @@ $("#search").on("click", function(){
             
           }
           
-          $(".test").on("click", function(){
-            var state = $(this).attr("data-State");
-            console.log(state);
-          if(state === "Still"){
-            $(this).attr("src", $(this).attr("data-animate"))
-            $(this).attr("data-State", "Animate");
+          $(".test").on("click", function(){  // on click event of the created gif itself
+            var state = $(this).attr("data-State"); // setting the data-state of whatever was clicked to a variable to use later
+            console.log(state); // logging the state variable to confirm the grab
+          if(state === "Still"){ // running an if/else statement to check what the name of the state currently is
+            $(this).attr("src", $(this).attr("data-animate")) // if the state is still, then the src is changed to use the animated state
+            $(this).attr("data-State", "Animate"); // changing the state name so it can be checked again on another click event 
           }else{
-            $(this).attr("src", $(this).attr("data-still"))
-            $(this).attr("data-State", "Still");
+            $(this).attr("src", $(this).attr("data-still")) // if the data state is animated, then change the src back to still
+            $(this).attr("data-State", "Still"); // change the name of the state to still so you can run back through the if statement
           }
          
       });
