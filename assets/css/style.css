@@ -1,0 +1,60 @@
+body{
+    font-family: 'Lobster', cursive;
+}
+
+
+html{
+    background: url("../images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    
+}
+
+.container, .jumbotron{
+    background: rgba(51,149,178, 0.1)
+}
+.jumbotron{
+    text-align: center;
+    opacity: 1;
+       
+}
+
+h1{
+    background: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5%;
+    font-size: 350%;
+ 
+}
+
+
+#buttons, #gifs-appear-here{
+    text-align:center;
+    font-size: 20px;
+    
+}
+
+.country, #search{
+    border-radius: 5px;
+}
+
+.country{
+    color: #efefef;
+    background: #445A59;
+    opacity: 1;
+}
+
+.test{
+    margin: 5%, 0%;
+}
+
+.item{
+    margin: 2%;
+}
+
+.rating{
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 17px;
+}
